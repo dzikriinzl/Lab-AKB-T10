@@ -1,226 +1,197 @@
 import React from "react";
+import {
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function AboutPage() {
   return (
-    <div
-      style={{
-        backgroundColor: "#f0f5ff",
-        padding: "50px 20px",
-        overflowY: "auto",
-        fontFamily: "Verdana, sans-serif",
-      }}
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
     >
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          backgroundColor: "#ffffff",
-          padding: "40px",
-          borderRadius: "14px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
-        }}
-      >
+      <View style={styles.card}>
         {/* Judul Halaman */}
-        <h1
-          style={{
-            fontSize: "36px",
-            fontFamily: "'Segoe UI', sans-serif",
-            color: "#0a3d62",
-            marginBottom: "24px",
-            textAlign: "center",
-          }}
-        >
-          Tentang Aplikasi Ini
-        </h1>
+        <Text style={styles.title}>Tentang Aplikasi Ini</Text>
 
         {/* Ilustrasi */}
-        <img
-          src="https://miro.medium.com/v2/resize:fit:600/1*fQJ4KqHQIxUH9SiAaLev9Q.png"
-          alt="Mobile App Illustration"
-          style={{
-            width: "450px",
-            margin: "0 auto 40px auto",
-            display: "block",
+        <Image
+          source={{
+            uri: "https://miro.medium.com/v2/resize:fit:600/1*fQJ4KqHQIxUH9SiAaLev9Q.png",
           }}
+          style={styles.illustration}
+          resizeMode="contain"
         />
 
         {/* Paragraf Pembuka */}
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#333",
-            lineHeight: "1.8",
-            fontFamily: "'Open Sans', sans-serif",
-            marginBottom: "30px",
-          }}
-        >
-          Aplikasi ini dibangun menggunakan <strong>React Native</strong> dan{" "}
-          <strong>Expo</strong>, dua teknologi andalan dalam pengembangan
-          aplikasi mobile lintas platform. Tujuannya adalah sebagai sarana
-          pembelajaran sekaligus implementasi praktis dalam dunia nyata.
-        </p>
+        <Text style={styles.paragraph}>
+          Aplikasi ini dibangun menggunakan{" "}
+          <Text style={styles.bold}>React Native</Text> dan{" "}
+          <Text style={styles.bold}>Expo</Text>, dua teknologi andalan dalam
+          pengembangan aplikasi mobile lintas platform. Tujuannya adalah sebagai
+          sarana pembelajaran sekaligus implementasi praktis dalam dunia nyata.
+        </Text>
 
         {/* React Native */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "30px",
-          }}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/919/919851.png"
-            alt="React Icon"
-            style={{ width: "40px", marginRight: "16px" }}
-          />
-          <h2
-            style={{
-              fontSize: "24px",
-              color: "#1d4ed8",
-              fontFamily: "'Segoe UI', sans-serif",
+        <View style={styles.sectionHeader}>
+          <Image
+            source={{
+              uri: "https://cdn-icons-png.flaticon.com/512/919/919851.png",
             }}
-          >
-            Apa itu React Native?
-          </h2>
-        </div>
-        <p
-          style={{
-            fontSize: "17px",
-            color: "#555",
-            lineHeight: "1.7",
-            fontFamily: "Georgia, serif",
-          }}
-        >
+            style={styles.icon}
+            resizeMode="contain"
+          />
+          <Text style={styles.sectionTitle}>Apa itu React Native?</Text>
+        </View>
+        <Text style={styles.paragraph}>
           React Native adalah framework open-source yang memungkinkan
           pengembangan aplikasi mobile untuk Android dan iOS hanya dengan satu
           basis kode JavaScript. Framework ini memungkinkan developer membuat
           aplikasi dengan UI native tanpa perlu menulis ulang kode untuk tiap
           platform.
-        </p>
+        </Text>
 
         {/* Expo */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "40px",
-            marginBottom: "20px",
-          }}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png"
-            alt="Expo Icon"
-            style={{ width: "40px", marginRight: "16px" }}
-          />
-          <h2
-            style={{
-              fontSize: "24px",
-              color: "#1d4ed8",
-              fontFamily: "'Segoe UI', sans-serif",
+        <View style={styles.sectionHeader}>
+          <Image
+            source={{
+              uri: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
             }}
-          >
-            Peran Expo dalam Aplikasi
-          </h2>
-        </div>
-        <p
-          style={{
-            fontSize: "17px",
-            color: "#555",
-            lineHeight: "1.7",
-            fontFamily: "Georgia, serif",
-          }}
-        >
+            style={styles.icon}
+            resizeMode="contain"
+          />
+          <Text style={styles.sectionTitle}>Peran Expo dalam Aplikasi</Text>
+        </View>
+        <Text style={styles.paragraph}>
           Expo adalah toolchain dan layanan pendukung untuk React Native yang
           menyederhanakan proses pengembangan dan testing. Expo memudahkan kamu
           untuk menjalankan aplikasi secara instan di perangkat tanpa harus
           konfigurasi manual Android Studio maupun Xcode.
-        </p>
+        </Text>
 
         {/* Fitur */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "40px",
-            marginBottom: "20px",
-          }}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
-            alt="Fitur Icon"
-            style={{ width: "40px", marginRight: "16px" }}
-          />
-          <h2
-            style={{
-              fontSize: "24px",
-              color: "#1d4ed8",
-              fontFamily: "'Segoe UI', sans-serif",
+        <View style={styles.sectionHeader}>
+          <Image
+            source={{
+              uri: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
             }}
-          >
-            Fitur Aplikasi
-          </h2>
-        </div>
-        <ul
-          style={{
-            fontSize: "17px",
-            color: "#444",
-            lineHeight: "1.8",
-            fontFamily: "'Trebuchet MS', sans-serif",
-            paddingLeft: "25px",
-          }}
-        >
-          <li>
-            <strong>Beranda</strong>: Informasi utama seputar universitas dan
-            fitur aplikasi.
-          </li>
-          <li>
-            <strong>Tentang</strong>: Penjelasan teknologi, latar belakang, dan
-            tujuan aplikasi.
-          </li>
-          <li>
-            <strong>Profil</strong>: Identitas pengembang dan data pribadi
-            pembuat aplikasi.
-          </li>
-        </ul>
+            style={styles.icon}
+            resizeMode="contain"
+          />
+          <Text style={styles.sectionTitle}>Fitur Aplikasi</Text>
+        </View>
+        <View style={styles.list}>
+          <Text style={styles.listItem}>
+            <Text style={styles.bold}>Beranda</Text>: Informasi utama seputar
+            universitas dan fitur aplikasi.
+          </Text>
+          <Text style={styles.listItem}>
+            <Text style={styles.bold}>Tentang</Text>: Penjelasan teknologi,
+            latar belakang, dan tujuan aplikasi.
+          </Text>
+          <Text style={styles.listItem}>
+            <Text style={styles.bold}>Profil</Text>: Identitas pengembang dan
+            data pribadi pembuat aplikasi.
+          </Text>
+        </View>
 
         {/* Kesimpulan */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "40px",
-            marginBottom: "20px",
-          }}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/148/148767.png"
-            alt="Check Icon"
-            style={{ width: "40px", marginRight: "16px" }}
-          />
-          <h2
-            style={{
-              fontSize: "24px",
-              color: "#1d4ed8",
-              fontFamily: "'Segoe UI', sans-serif",
+        <View style={styles.sectionHeader}>
+          <Image
+            source={{
+              uri: "https://cdn-icons-png.flaticon.com/512/148/148767.png",
             }}
-          >
-            Kesimpulan
-          </h2>
-        </div>
-        <p
-          style={{
-            fontSize: "17px",
-            color: "#555",
-            lineHeight: "1.7",
-            fontFamily: "Georgia, serif",
-          }}
-        >
+            style={styles.icon}
+            resizeMode="contain"
+          />
+          <Text style={styles.sectionTitle}>Kesimpulan</Text>
+        </View>
+        <Text style={styles.paragraph}>
           Melalui kombinasi React Native dan Expo, pengembangan aplikasi mobile
           menjadi jauh lebih efisien dan menyenangkan. Aplikasi ini menunjukkan
           bahwa pengembangan mobile tidak harus rumit, bahkan bisa dimulai hanya
           dengan browser, editor, dan semangat belajar.
-        </p>
-      </div>
-    </div>
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
+
+const windowWidth = Dimensions.get("window").width;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f0f5ff",
+  },
+  contentContainer: {
+    paddingVertical: 50,
+    paddingHorizontal: 20,
+    alignItems: "center",
+  },
+  card: {
+    backgroundColor: "#ffffff",
+    padding: 40,
+    borderRadius: 14,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.08,
+    shadowRadius: 18,
+    elevation: 8,
+    maxWidth: 1100,
+    width: "100%",
+  },
+  title: {
+    fontSize: 36,
+    fontFamily: "'Segoe UI', sans-serif",
+    color: "#0a3d62",
+    marginBottom: 24,
+    textAlign: "center",
+  },
+  illustration: {
+    width: windowWidth > 480 ? 450 : windowWidth - 40,
+    height: 200,
+    alignSelf: "center",
+    marginBottom: 40,
+  },
+  paragraph: {
+    fontSize: 18,
+    color: "#333",
+    lineHeight: 32,
+    fontFamily: "'Open Sans', sans-serif",
+    marginBottom: 30,
+  },
+  bold: {
+    fontWeight: "bold",
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 40,
+  },
+  icon: {
+    width: 40,
+    height: 40,
+    marginRight: 16,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    color: "#1d4ed8",
+    fontFamily: "'Segoe UI', sans-serif",
+  },
+  list: {
+    paddingLeft: 20,
+  },
+  listItem: {
+    fontSize: 18,
+    color: "#444",
+    lineHeight: 32,
+    fontFamily: "'Trebuchet MS', sans-serif",
+    marginBottom: 10,
+  },
+});
