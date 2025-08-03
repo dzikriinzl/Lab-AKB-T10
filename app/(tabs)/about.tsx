@@ -1,197 +1,96 @@
-import React from "react";
-import {
-  Dimensions,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function AboutPage() {
+export default function AboutScreen() {
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.contentContainer}
-    >
-      <View style={styles.card}>
-        {/* Judul Halaman */}
-        <Text style={styles.title}>Tentang Aplikasi Ini</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Tentang Aplikasi Ini</Text>
+      <Text style={styles.bodyText}>
+        Aplikasi mobile ini dibuat sebagai bagian dari tugas LAB Aplikasi Komputasi Bergerak di Jurusan Informatika Unismuh Makassar. Tujuannya adalah untuk mendemonstrasikan penggunaan Expo Router dalam membangun aplikasi dengan navigasi tab bar sederhana.
+      </Text>
 
-        {/* Ilustrasi */}
+      <View style={styles.sectionContainer}>
+        <Text style={styles.subtitle}>Teknologi yang Digunakan</Text>
         <Image
-          source={{
-            uri: "https://miro.medium.com/v2/resize:fit:600/1*fQJ4KqHQIxUH9SiAaLev9Q.png",
-          }}
-          style={styles.illustration}
-          resizeMode="contain"
+          source={require('../../assets/images/react-native-and-expo-cover.jpg')}
         />
-
-        {/* Paragraf Pembuka */}
-        <Text style={styles.paragraph}>
-          Aplikasi ini dibangun menggunakan{" "}
-          <Text style={styles.bold}>React Native</Text> dan{" "}
-          <Text style={styles.bold}>Expo</Text>, dua teknologi andalan dalam
-          pengembangan aplikasi mobile lintas platform. Tujuannya adalah sebagai
-          sarana pembelajaran sekaligus implementasi praktis dalam dunia nyata.
+        <Text style={styles.sectionText}>
+          -
         </Text>
-
-        {/* React Native */}
-        <View style={styles.sectionHeader}>
-          <Image
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/919/919851.png",
-            }}
-            style={styles.icon}
-            resizeMode="contain"
-          />
-          <Text style={styles.sectionTitle}>Apa itu React Native?</Text>
-        </View>
-        <Text style={styles.paragraph}>
-          React Native adalah framework open-source yang memungkinkan
-          pengembangan aplikasi mobile untuk Android dan iOS hanya dengan satu
-          basis kode JavaScript. Framework ini memungkinkan developer membuat
-          aplikasi dengan UI native tanpa perlu menulis ulang kode untuk tiap
-          platform.
+        <Text style={styles.sectionText}>
+          Aplikasi ini dibangun menggunakan <Text style={styles.boldText}>React Native</Text> dan <Text style={styles.boldText}>Expo</Text>. React Native memungkinkan pengembangan aplikasi lintas platform, sementara Expo menyederhanakan alur kerja dengan menyediakan berbagai alat dan layanan.
         </Text>
+      </View>
 
-        {/* Expo */}
-        <View style={styles.sectionHeader}>
-          <Image
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
-            }}
-            style={styles.icon}
-            resizeMode="contain"
-          />
-          <Text style={styles.sectionTitle}>Peran Expo dalam Aplikasi</Text>
-        </View>
-        <Text style={styles.paragraph}>
-          Expo adalah toolchain dan layanan pendukung untuk React Native yang
-          menyederhanakan proses pengembangan dan testing. Expo memudahkan kamu
-          untuk menjalankan aplikasi secara instan di perangkat tanpa harus
-          konfigurasi manual Android Studio maupun Xcode.
+      <View style={styles.sectionContainer}>
+        <Text style={styles.subtitle}>Navigasi dan Routing</Text>
+        <Image
+          source={require('../../assets/images/exporouter.png')}
+        />
+        <Text style={styles.sectionText}>
+          Untuk navigasi antar halaman, kami menggunakan <Text style={styles.boldText}>Expo Router</Text>. Teknologi ini menyediakan sistem file-based routing yang intuitif, yang memungkinkan kami membuat tab bar di bagian bawah layar dengan mudah.
         </Text>
+      </View>
 
-        {/* Fitur */}
-        <View style={styles.sectionHeader}>
-          <Image
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
-            }}
-            style={styles.icon}
-            resizeMode="contain"
-          />
-          <Text style={styles.sectionTitle}>Fitur Aplikasi</Text>
-        </View>
-        <View style={styles.list}>
-          <Text style={styles.listItem}>
-            <Text style={styles.bold}>Beranda</Text>: Informasi utama seputar
-            universitas dan fitur aplikasi.
-          </Text>
-          <Text style={styles.listItem}>
-            <Text style={styles.bold}>Tentang</Text>: Penjelasan teknologi,
-            latar belakang, dan tujuan aplikasi.
-          </Text>
-          <Text style={styles.listItem}>
-            <Text style={styles.bold}>Profil</Text>: Identitas pengembang dan
-            data pribadi pembuat aplikasi.
-          </Text>
-        </View>
-
-        {/* Kesimpulan */}
-        <View style={styles.sectionHeader}>
-          <Image
-            source={{
-              uri: "https://cdn-icons-png.flaticon.com/512/148/148767.png",
-            }}
-            style={styles.icon}
-            resizeMode="contain"
-          />
-          <Text style={styles.sectionTitle}>Kesimpulan</Text>
-        </View>
-        <Text style={styles.paragraph}>
-          Melalui kombinasi React Native dan Expo, pengembangan aplikasi mobile
-          menjadi jauh lebih efisien dan menyenangkan. Aplikasi ini menunjukkan
-          bahwa pengembangan mobile tidak harus rumit, bahkan bisa dimulai hanya
-          dengan browser, editor, dan semangat belajar.
+      <View style={styles.sectionContainer}>
+        <Text style={styles.subtitle}>Fungsi Setiap Halaman:</Text>
+        <Text style={styles.bodyText}>
+          • <Text style={styles.boldText}>Home:</Text> Menampilkan informasi dasar tentang Unismuh Makassar.
+        </Text>
+        <Text style={styles.bodyText}>
+          • <Text style={styles.boldText}>About:</Text> Berisi penjelasan mengenai aplikasi dan teknologi yang digunakan.
+        </Text>
+        <Text style={styles.bodyText}>
+          • <Text style={styles.boldText}>Profil:</Text> Menampilkan data diri pribadi.
         </Text>
       </View>
     </ScrollView>
   );
 }
 
-const windowWidth = Dimensions.get("window").width;
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#f0f5ff",
-  },
-  contentContainer: {
-    paddingVertical: 50,
-    paddingHorizontal: 20,
-    alignItems: "center",
-  },
-  card: {
-    backgroundColor: "#ffffff",
-    padding: 40,
-    borderRadius: 14,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.08,
-    shadowRadius: 18,
-    elevation: 8,
-    maxWidth: 1100,
-    width: "100%",
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: '#fff',
   },
   title: {
-    fontSize: 36,
-    fontFamily: "'Segoe UI', sans-serif",
-    color: "#0a3d62",
-    marginBottom: 24,
-    textAlign: "center",
-  },
-  illustration: {
-    width: windowWidth > 480 ? 450 : windowWidth - 40,
-    height: 200,
-    alignSelf: "center",
-    marginBottom: 40,
-  },
-  paragraph: {
-    fontSize: 18,
-    color: "#333",
-    lineHeight: 32,
-    fontFamily: "'Open Sans', sans-serif",
-    marginBottom: 30,
-  },
-  bold: {
-    fontWeight: "bold",
-  },
-  sectionHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-    marginTop: 40,
-  },
-  icon: {
-    width: 40,
-    height: 40,
-    marginRight: 16,
-  },
-  sectionTitle: {
     fontSize: 24,
-    color: "#1d4ed8",
-    fontFamily: "'Segoe UI', sans-serif",
-  },
-  list: {
-    paddingLeft: 20,
-  },
-  listItem: {
-    fontSize: 18,
-    color: "#444",
-    lineHeight: 32,
-    fontFamily: "'Trebuchet MS', sans-serif",
+    fontWeight: 'bold',
     marginBottom: 10,
+    textAlign: 'center',
+    fontFamily: 'Oswald-Regular',
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 15,
+    marginBottom: 5,
+    fontFamily: 'Roboto-Black',
+  },
+  bodyText: {
+    fontSize: 16,
+    marginBottom: 5,
+    textAlign: 'justify',
+    fontFamily: 'Inter-Italic',
+  },
+  boldText: {
+    fontWeight: 'bold',
+    fontFamily: 'Roboto-Black',
+  },
+  sectionContainer: {
+    marginBottom: 20,
+    alignItems: 'center',
+  },
+  sectionImage: {
+    width: '100%',
+    height: 150,
+    borderRadius: 8,
+    marginVertical: 10,
+    resizeMode: 'cover',
+  },
+  sectionText: {
+    fontSize: 14,
+    textAlign: 'justify',
+    fontFamily: 'Inter-Italic',
   },
 });

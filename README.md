@@ -1,50 +1,99 @@
-# Welcome to your Expo app 👋
+# Tugas 8: Aplikasi Mobile Expo Router
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplikasi ini dibuat sebagai bagian dari tugas mata kuliah untuk mendemonstrasikan penggunaan `Expo Router` dalam membangun aplikasi mobile dengan navigasi `tab bar`. Aplikasi ini terdiri dari tiga halaman utama: Home, About, dan Profil.
 
-## Get started
+## Fitur Utama
 
-1. Install dependencies
+-   **Navigasi Tab Bar**: Menggunakan Expo Router untuk menyediakan navigasi tab bar yang intuitif di bagian bawah layar.
 
-   ```bash
-   npm install
-   ```
+-   **Tiga Halaman Utama**:
+    -   **Home**: Menampilkan informasi tentang Universitas Muhammadiyah Makassar (Unismuh Makassar) dengan gambar `unismuh.png`.
+    -   **About**: Menyediakan penjelasan tentang aplikasi dan teknologi yang digunakan, dengan gambar ilustrasi seperti `exporouter.png` dan `react-native-and-expo-cover.jpg`.
+    -   **Profil**: Menampilkan data diri pribadi pengembang dan foto profil `Dzikri.jpeg`.
 
-2. Start the app
+-   **Penggunaan Font Kustom**: Menggunakan beberapa font kustom yang dimuat dari folder `assets/fonts`.
 
-   ```bash
-   npx expo start
-   ```
+-   **Komponen Dasar**: Seluruh aplikasi dibangun dengan memanfaatkan komponen dasar dari React Native.
 
-In the output, you'll find options to open the app in a
+## Struktur Proyek
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Berikut adalah struktur proyek yang digunakan:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+├── .expo
 
-## Get a fresh project
+├── .vscode
 
-When you're ready, run:
+├── app
 
-```bash
-npm run reset-project
-```
+│   └── (tabs)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+│       ├── _layout.tsx
 
-## Learn more
+│       ├── about.tsx
 
-To learn more about developing your project with Expo, look at the following resources:
+│       ├── index.tsx
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+│       └── profil.tsx
 
-## Join the community
+├── assets
 
-Join our community of developers creating universal apps.
+│   ├── fonts
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+│   └── images
+
+│       ├── Dzikri.jpeg
+
+│       ├── exporouter.png
+
+│       ├── react-native-and-expo-cover.jpg
+
+│       └── unismuh.png
+
+├── node_modules
+
+├── .gitignore
+
+├── app.json
+
+├── eslint.config.js
+
+├── expo-env.d.ts
+
+├── package-lock.json
+
+├── package.json
+
+├── README.md
+
+└── tsconfig.json
+
+## Teknologi yang Digunakan
+
+-   **React Native**: Kerangka kerja untuk membangun aplikasi mobile lintas platform.
+-   **Expo**: Kumpulan alat dan layanan untuk mempermudah pengembangan React Native.
+-   **Expo Router**: Sistem routing berbasis file yang efisien untuk navigasi.
+-   **Font Kustom**: Digunakan untuk meningkatkan estetika dan pengalaman pengguna.
+
+## Cara Menjalankan Aplikasi
+
+1.  Pastikan Anda telah menginstal Node.js dan Expo Go di perangkat seluler Anda.
+2.  Clone repositori ini:
+    ```bash
+    git clone https://github.com/dzikriinzl/LAB-T8
+    cd LAB-AKB-T8
+    ```
+3.  Instal semua dependensi:
+    ```bash
+    npm install
+    # atau
+    yarn install
+    ```
+4.  Jalankan aplikasi di mode pengembangan:
+    ```bash
+    npx expo start
+    ```
+5.  Pindai kode QR yang muncul di terminal menggunakan aplikasi Expo Go di ponsel Anda.
+
+---
+
+Terima kasih telah menggunakan aplikasi ini.
