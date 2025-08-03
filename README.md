@@ -79,7 +79,7 @@ Berikut adalah struktur proyek yang digunakan:
 1.  Pastikan Anda telah menginstal Node.js dan Expo Go di perangkat seluler Anda.
 2.  Clone repositori ini:
     ```bash
-    git clone https://github.com/dzikriinzl/LAB-T8
+    git clone https://github.com/dzikriinzl/LAB-AKB-T8
     cd LAB-AKB-T8
     ```
 3.  Instal semua dependensi:
