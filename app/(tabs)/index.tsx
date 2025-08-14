@@ -1,89 +1,78 @@
-import { Image, Linking, ScrollView, StyleSheet, Text } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { students } from "../data/students";
 
 export default function HomeScreen() {
-  const handleOpenMap = () => {
-    Linking.openURL('https://maps.app.goo.gl/mf6GvJBvSPoPzhB58');
-  };
-
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Unismuh Makassar</Text>
-      <Image
-        source={require('../../assets/images/unismuh.png')}
+    <View style={styles.container}>
+      <Text style={styles.header}>
+        Daftar Mahasiswa Informatika Angkatan 2022
+      </Text>
+
+      <FlatList
+        data={students}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ paddingBottom: 20 }}
+        renderItem={({ item }) => (
+          <Link href={`/student/${item.id}`} asChild>
+            <TouchableOpacity style={styles.item} activeOpacity={0.85}>
+              <Ionicons
+                name="person-circle-outline"
+                size={28}
+                color="#25d4ebff"
+                style={styles.icon}
+              />
+              <Text style={styles.name}>{item.name}</Text>
+              <Ionicons
+                name="chevron-forward"
+                size={20}
+                color="#25ebdbff"
+                style={{ marginLeft: "auto" }}
+              />
+            </TouchableOpacity>
+          </Link>
+        )}
       />
-      <Text style={styles.subtitle}>
-      </Text>
-      <Text style={styles.subtitle}>
-        Universitas Muhammadiyah Makassar, Unismuh Makassar, adalah salah satu perguruan tinggi Muhammadiyah yang merupakan amal usaha Muhammadiyah dalam mengembangkan pendidikan khususnya pada jenjang pendidikan tinggi.
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Alamat:</Text> Jl. Sultan Alauddin No.259, Gn. Sari, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90221
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Rektor:</Text> Dr. Ir. H. Abd. Rakhim Nanda, MT, IPU
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Akreditasi:</Text> UNGGUL
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Pendaftaran:</Text> 26.860 (2014)
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Didirikan:</Text> 19 Juni 1963
-      </Text>
-      <Text style={styles.infoText}>
-        <Text style={styles.boldText}>Provinsi:</Text> Sulawesi Selatan
-      </Text>
-      <Text style={styles.linkText} onPress={handleOpenMap}>
-        Lihat Lokasi di Google Maps
-      </Text>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    alignItems: 'center',
+    flex: 1,
+    backgroundColor: "#1e718aff", // Biru navy
     padding: 20,
-    backgroundColor: '#fff',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-    fontFamily: 'Manrope-Bold',
-  },
-  image: {
-    width: '100%',
-    height: 200,
-    borderRadius: 10,
+  header: {
+    fontSize: 26,
+    fontWeight: "bold",
     marginBottom: 20,
-    resizeMode: 'cover',
+    textAlign: "center",
+    color: "#FFFFFF",
+    letterSpacing: 1,
   },
-  subtitle: {
-    fontSize: 16,
-    marginBottom: 10,
-    textAlign: 'justify',
-    fontFamily: 'Urbanist',
+  item: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 14,
+    paddingHorizontal: 15,
+    borderRadius: 12,
+    marginBottom: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 4,
+    borderLeftWidth: 6,
+    borderLeftColor: "#25e5ebff", // Biru terang
   },
-  infoText: {
-    fontSize: 14,
-    marginBottom: 5,
-    width: '100%',
-    textAlign: 'left',
-    fontFamily: 'Urbanist',
-  },
-  boldText: {
-    fontWeight: 'bold',
-    fontFamily: 'Manrope-Bold',
-  },
-  linkText: {
-    fontSize: 14,
-    color: 'blue',
-    marginTop: 10,
-    textDecorationLine: 'underline',
-    fontFamily: 'Urbanist',
-  },
+  icon: { marginRight: 10 },
+  name: { fontSize: 16, fontWeight: "600", color: "#000000ff" },
 });

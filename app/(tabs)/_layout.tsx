@@ -13,16 +13,16 @@ export default function TabLayout() {
     async function loadFonts() {
       try {
         await Font.loadAsync({
-          'Inter-Italic': require('../../assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf'),
-          'Lora-Bold': require('../../assets/fonts/Lora-Bold.ttf'),
-          'Manrope-Bold': require('../../assets/fonts/Manrope-Bold.ttf'),
-          'MerriweatherSans-SemiBoldItalic': require('../../assets/fonts/MerriweatherSans-SemiBoldItalic.ttf'),
-          'Oswald-Regular': require('../../assets/fonts/Oswald-Regular.ttf'),
-          'Outfit-Black': require('../../assets/fonts/Outfit-Black.ttf'),
-          'PlayfairDisplay-Regular': require('../../assets/fonts/PlayfairDisplay-Regular.ttf'),
-          'RedHatMono': require('../../assets/fonts/RedHatMono.ttf'),
-          'Roboto-Black': require('../../assets/fonts/Roboto-Black.ttf'),
-          'Urbanist': require('../../assets/fonts/Urbanist.ttf'),
+          'Inter-Italic': require('../../../assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf'),
+          'Lora-Bold': require('../../../assets/fonts/Lora-Bold.ttf'),
+          'Manrope-Bold': require('../../../assets/fonts/Manrope-Bold.ttf'),
+          'MerriweatherSans-SemiBoldItalic': require('../../../assets/fonts/MerriweatherSans-SemiBoldItalic.ttf'),
+          'Oswald-Regular': require('../../../assets/fonts/Oswald-Regular.ttf'),
+          'Outfit-Black': require('../../../assets/fonts/Outfit-Black.ttf'),
+          'PlayfairDisplay-Regular': require('../../../assets/fonts/PlayfairDisplay-Regular.ttf'),
+          'RedHatMono': require('../../../assets/fonts/RedHatMono.ttf'),
+          'Roboto-Black': require('../../../assets/fonts/Roboto-Black.ttf'),
+          'Urbanist': require('../../../assets/fonts/Urbanist.ttf'),
         });
       } catch (e) {
         console.warn(e);
@@ -42,6 +42,13 @@ export default function TabLayout() {
     <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
       <Tabs.Screen
         name="index"
+        options={{
+          title: 'Mahasiswa',
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="users" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="mahasiswa"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,

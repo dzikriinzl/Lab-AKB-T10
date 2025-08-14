@@ -1,15 +1,17 @@
-# Tugas 8: Aplikasi Mobile Expo Router
+# Tugas 10: Aplikasi Mobile Mahasiswa Expo Router
 
-Aplikasi ini dibuat sebagai bagian dari tugas mata kuliah untuk mendemonstrasikan penggunaan `Expo Router` dalam membangun aplikasi mobile dengan navigasi `tab bar`. Aplikasi ini terdiri dari tiga halaman utama: Home, About, dan Profil.
+Aplikasi ini dibuat sebagai bagian dari tugas mata kuliah untuk mendemonstrasikan penggunaan `Expo Router` dalam membangun aplikasi mobile dengan navigasi `tab bar`. Aplikasi ini menampilkan daftar mahasiswa dengan detail, serta beberapa halaman informasi tambahan.
 
 ## Fitur Utama
 
--   **Navigasi Tab Bar**: Menggunakan Expo Router untuk menyediakan navigasi tab bar yang intuitif di bagian bawah layar.
-
+-   **Daftar Mahasiswa**: Menampilkan daftar mahasiswa dari data lokal.
+-   **Detail Mahasiswa**: Menampilkan informasi lengkap (nama, NIM, foto) ketika nama mahasiswa diklik.
+-   **Navigasi Berbasis Tab**: Menggunakan Expo Router untuk navigasi yang rapi dengan tab bar di bagian bawah.
 -   **Tiga Halaman Utama**:
-    -   **Home**: Menampilkan informasi tentang Universitas Muhammadiyah Makassar (Unismuh Makassar) dengan gambar `unismuh.png`.
-    -   **About**: Menyediakan penjelasan tentang aplikasi dan teknologi yang digunakan, dengan gambar ilustrasi seperti `exporouter.png` dan `react-native-and-expo-cover.jpg`.
-    -   **Profil**: Menampilkan data diri pribadi pengembang dan foto profil `Dzikri.jpeg`.
+    -   **Mahasiswa**: Halaman utama yang menampilkan daftar mahasiswa.
+    -   **Home**: Menampilkan informasi tentang Universitas Muhammadiyah Makassar (Unismuh Makassar).
+    -   **About**: Menyediakan penjelasan tentang aplikasi dan teknologi yang digunakan.
+    -   **Profil**: Menampilkan data diri pribadi pengembang dan foto profil.
 
 -   **Penggunaan Font Kustom**: Menggunakan beberapa font kustom yang dimuat dari folder `assets/fonts`.
 
@@ -25,15 +27,25 @@ Berikut adalah struktur proyek yang digunakan:
 
 ├── app
 
-│   └── (tabs)
+│   ├── (tabs)
 
-│       ├── _layout.tsx
+│   │   ├── _layout.tsx
 
-│       ├── about.tsx
+│   │   ├── about.tsx
 
-│       ├── index.tsx
+│   │   ├── index.tsx      # Daftar Mahasiswa
 
-│       └── profil.tsx
+│   │   ├── mahasiswa.tsx  # Halaman Home (Unismuh)
+
+│   │   └── profil.tsx
+
+│   ├── student
+
+│   │   └── [id].tsx       # Halaman Detail Mahasiswa
+
+│   └── data
+
+│       └── students.js    # Data mahasiswa
 
 ├── assets
 
@@ -79,8 +91,8 @@ Berikut adalah struktur proyek yang digunakan:
 1.  Pastikan Anda telah menginstal Node.js dan Expo Go di perangkat seluler Anda.
 2.  Clone repositori ini:
     ```bash
-    git clone https://github.com/dzikriinzl/LAB-AKB-T8
-    cd LAB-AKB-T8
+    git clone [URL-REPOSITORI-ANDA]
+    cd [NAMA-FOLDER-PROYEK]
     ```
 3.  Instal semua dependensi:
     ```bash
