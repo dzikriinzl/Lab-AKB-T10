@@ -91,8 +91,8 @@ Berikut adalah struktur proyek yang digunakan:
 1.  Pastikan Anda telah menginstal Node.js dan Expo Go di perangkat seluler Anda.
 2.  Clone repositori ini:
     ```bash
-    git clone [URL-REPOSITORI-ANDA]
-    cd [NAMA-FOLDER-PROYEK]
+    git clone https://github.com/dzikriinzl/Lab-AKB-T10.git
+    cd Lab-AKB-T10
     ```
 3.  Instal semua dependensi:
     ```bash
